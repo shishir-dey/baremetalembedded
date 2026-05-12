@@ -38,6 +38,7 @@ void WWDG_IRQHandler(void) __attribute__((weak, alias("Default_Handler")));
 void PVD_IRQHandler(void) __attribute__((weak, alias("Default_Handler")));
 void TAMP_STAMP_IRQHandler(void) __attribute__((weak, alias("Default_Handler")));
 void RTC_WKUP_IRQHandler(void) __attribute__((weak, alias("Default_Handler")));
+void FLASH_IRQHandler(void) __attribute__((weak, alias("Default_Handler")));
 void RCC_IRQHandler(void) __attribute__((weak, alias("Default_Handler")));
 void EXTI0_IRQHandler(void) __attribute__((weak, alias("Default_Handler")));
 void EXTI1_IRQHandler(void) __attribute__((weak, alias("Default_Handler")));
@@ -137,7 +138,7 @@ uint32_t vectors[] __attribute__((section(".isr_vector"))) = {
     (uint32_t)PVD_IRQHandler,
     (uint32_t)TAMP_STAMP_IRQHandler,
     (uint32_t)RTC_WKUP_IRQHandler,
-    0,
+    (uint32_t)FLASH_IRQHandler,
     (uint32_t)RCC_IRQHandler,
     (uint32_t)EXTI0_IRQHandler,
     (uint32_t)EXTI1_IRQHandler,
